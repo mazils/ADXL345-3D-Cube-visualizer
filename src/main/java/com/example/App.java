@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 public class App extends Application {
     private static final int WIDTH = 1400;
     private static final int HEIGHT = 800;
-    double pitch = 0;
     private SerialReader reader = new SerialReader();
 
     @Override
@@ -38,7 +37,6 @@ public class App extends Application {
                     matrixRotateNode(box, Math.toRadians(reading.getRoll()), Math.toRadians(reading.getPitch()), 0);
                 }
         ));
-
 
         reader.openPort("COM4");
         Thread thread = new Thread(reader);

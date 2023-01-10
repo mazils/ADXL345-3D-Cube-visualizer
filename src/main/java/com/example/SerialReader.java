@@ -49,11 +49,8 @@ public class SerialReader extends Thread {
                     roll = data.split(",")[1];
                     adxl345Datadata.setPitch(Double.parseDouble(pitch));
                     adxl345Datadata.setRoll(Double.parseDouble(roll));
-                    //todo: set roll
-//
                     this.onRotationRead.accept(adxl345Datadata);
                 } catch (NumberFormatException e) {
-                    System.out.println("this fucks up " + data);
                 }
             }
         } catch (IOException e) {
